@@ -94,7 +94,7 @@ class PyTest(TestCommand):
 
 setup(
     name='raven',
-    version='5.1.1',
+    version='5.1.1.dev20160118',
     author='David Cramer',
     author_email='dcramer@gmail.com',
     url='http://github.com/getsentry/raven-python',

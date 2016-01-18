@@ -142,7 +142,7 @@ class Sentry(object):
             return
 
         try:
-            is_authenticated = current_user.is_authenticated()
+            is_authenticated = current_user.is_authenticated
         except AttributeError:
             # HACK: catch the attribute error thrown by flask-login is not attached
             # >   current_user = LocalProxy(lambda: _request_ctx_stack.top.user)
@@ -152,7 +152,7 @@ class Sentry(object):
         if is_authenticated:
             user_info = {
                 'is_authenticated': True,
-                'is_anonymous': current_user.is_anonymous(),
+                'is_anonymous': current_user.is_anonymous,
                 'id': current_user.get_id(),
             }
 
@@ -163,7 +163,7 @@ class Sentry(object):
         else:
             user_info = {
                 'is_authenticated': False,
-                'is_anonymous': current_user.is_anonymous(),
+                'is_anonymous': current_user.is_anonymous,
             }
 
         return user_info
